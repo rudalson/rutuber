@@ -11,5 +11,15 @@
         "ecosystem:cordova"
     ],
     "author": "Apache Cordova Team",
-    "license": "Apache-2.0"
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cordova-plugin-in-app-youtube": "git+https://github.com/davidefavia/cordova-plugin-in-app-youtube.git",
+        "cordova-plugin-inappbrowser": "^3.1.0"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-in-app-youtube": {}
+        }
+    }
 }
