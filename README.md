@@ -10,3 +10,14 @@ $ cordova create rutubers com.rudalson.rutuber Rutuber
 $ cordova plugin add cordova-plugin-inappbrowser
 $ cordova plugin add https://github.com/davidefavia/cordova-plugin-in-app-youtube
 ```
+
+## Platform
+```shell script
+$ cordova platform add android
+```
+
+## 진동제어를 위한 플러그인 추가
+```shell script
+$ cordova plugin add cordova-plugin-vibration
+$ cordova plugin add cordova-plugin-media
+```
