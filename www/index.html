@@ -1,49 +1,333 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content: http://*.youtube.com;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="jquery.mobile/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <script type="text/javascript" charset="utf-8" src="jquery.mobile/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="jquery.mobile/jquery.mobile-1.4.5.min.js"></script>
+    <title>RuTubers</title>
+</head>
+<body>
+<div data-role="page" id="page0" class="in_map_style" style="background-color:#838383;">
+    <table class="in_map_style" style="background:radial-gradient(#838383, #000000);">
+        <tr>
+            <td style="vertical-align:middle;" align="center">
+                <img id="introimg" src="img/logo.png">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div data-role="page" id="page1">
+    <div role="main" class="ui-content">
+
+        <div class="ui-grid-b">
+            <div class="ui-block-a">
+                <div class="balldivbg">
+                    <img src="img/youtube.png" class="ball">
+                    <div class="balldiv">
+                        <img id="youtube" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="balldivbg">
+                    <img src="img/afreecatv.png" class="ball">
+                    <div class="balldiv">
+                        <img id="afreecatv" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-c">
+                <div class="balldivbg">
+                    <img src="img/twitch.png" class="ball">
+                    <div class="balldiv">
+                        <img id="twitch" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-block-a">
+                <div class="balldivbg">
+                    <img src="img/facebook.png" class="ball">
+                    <div class="balldiv">
+                        <img id="facebook" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="balldivbg">
+                    <img src="img/nstagram.png" class="ball">
+                    <div class="balldiv">
+                        <img id="instagram" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-c">
+                <div class="balldivbg">
+                    <img src="img/twitter.png" class="ball">
+                    <div class="balldiv">
+                        <img id="twitter" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-block-a">
+                <div class="balldivbg">
+                    <img src="img/tiktok.png" class="ball">
+                    <div class="balldiv">
+                        <img id="tiktok" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="balldivbg">
+                    <img src="img/toonation.png" class="ball">
+                    <div class="balldiv">
+                        <img id="toonation" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-c">
+                <div class="balldivbg">
+                    <img src="img/twip.png" class="ball">
+                    <div class="balldiv">
+                        <img id="twip" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-block-a">
+                <div class="balldivbg">
+                    <img src="img/daumcafe.png" class="ball">
+                    <div class="balldiv">
+                        <img id="daumcafe" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="balldivbg">
+                    <img src="img/navercafe.png" class="ball">
+                    <div class="balldiv">
+                        <img id="navercafe" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-c">
+                <div class="balldivbg">
+                    <img src="img/tistory.png" class="ball">
+                    <div class="balldiv">
+                        <img id="tistory" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-block-a">
+                <div class="balldivbg">
+                    <img src="img/naverblog.png" class="ball">
+                    <div class="balldiv">
+                        <img id="naverblog" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="balldivbg">
+                    <img src="img/kakaotalk.png" class="ball">
+                    <div class="balldiv">
+                        <img id="kakaotalk" src="img/crystal-ball.png" class="ball">
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-c">
+                <div class="balldivbg">
+                    <img src="img/mail.png" class="ball">
+                    <div class="balldiv">
+                        <a href="mailto:초보궁사<chobo904.ceo@gmail.com>?subject=[초보궁사]"><img id="email" src="img/crystal-ball.png" class="ball"></a>
+                    </div>
+                </div>
             </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+
+    </div>
+</div>
+
+<div data-role="page" id="page2">
+    <div data-role="header">
+        <h1>유튜브 (분류별)</h1>
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-right ui-btn-icon-left" data-inline="true" data-transition="none">이전</a>
+    </div>
+    <div role="main" class="ui-content">
+
+        <div data-role="collapsibleset" data-theme="a">
+            <div data-role="collapsible">
+                <h2>게임</h2>
+                <div data-role="collapsibleset" data-theme="a">
+
+                    <div data-role="collapsible">
+                        <h2>FPS</h2>
+                        <ul data-role="listview">
+                            <li>
+                                <a href="#" class="mlist" vid="fBcgHlhnhiQ">
+                                    <img src="http://img.youtube.com/vi/fBcgHlhnhiQ/default.jpg" class="photo">
+                                    <h3>방송역사상 역대급 레전드 미션을 받았습니다</h3>
+                                    <p>(뜨뜨뜨뜨) 2019. 7. 20 - 배틀그라운드</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="mlist" vid="a_j0z6-19WA">
+                                    <img src="http://img.youtube.com/vi/a_j0z6-19WA/default.jpg" class="photo">
+                                    <h3>그녀를 울려버렸습니다.죄송합니다...</h3>
+                                    <p>(깨박이) 2019. 8. 20 - 배틀그라운드</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="mlist" vid="Mv0WRqojKWA">
+                                    <img src="http://img.youtube.com/vi/Mv0WRqojKWA/default.jpg" class="photo">
+                                    <h3>이 초등학생의 부모님을 뵙고싶습니다ㅋㅋㅋㅋㅋ</h3>
+                                    <p>(김재원) 2018. 9. 1 - 오버워치</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h2>미연시</h2>
+                        <ul data-role="listview">
+                            <li>
+                                <a href="#" class="mlist" vid="qkuscYc24Ko">
+                                    <img src="http://img.youtube.com/vi/qkuscYc24Ko/default.jpg" class="photo">
+                                    <h3>평범한 분식집에 이세계 여왕님이 살고 있다?!</h3>
+                                    <p>(풍월량) 2019. 1. 9 - 기적의 분식집</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="mlist" vid="nH4VFAVx5q0">
+                                    <img src="http://img.youtube.com/vi/nH4VFAVx5q0/default.jpg" class="photo">
+                                    <h3>심리적 공포 미연시 정말 위험한 게임</h3>
+                                    <p>(풍월량) 2018. 1. 3 - 두근두근 문예부</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h2>대전</h2>
+                        <ul data-role="listview">
+                            <li>
+                                <a href="#" class="mlist" vid="rNkharVD4nQ">
+                                    <img src="http://img.youtube.com/vi/rNkharVD4nQ/default.jpg" class="photo">
+                                    <h3>모든 캐릭터 필살기&amp;초필살기 모음! 원나블드헌?!</h3>
+                                    <p>(풍월량) 2019. 2. 13 - 점프 포스</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h2>공포</h2>
+                        <ul data-role="listview">
+                            <li>
+                                <a href="#" class="mlist" vid="5BObJeHdGF0">
+                                    <img src="http://img.youtube.com/vi/5BObJeHdGF0/default.jpg" class="photo">
+                                    <h3>한 가족의 비극을 다룬 공포게임</h3>
+                                    <p>(풍월량) 2019. 2. 21 - 디보션: 환원</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div data-role="collapsible">
+                <h2>먹방</h2>
+                <ul data-role="listview">
+                    <li>
+                        <a href="#" class="mlist" vid="Hozhkh241cQ">
+                            <img src="http://img.youtube.com/vi/Hozhkh241cQ/default.jpg" class="photo">
+                            <h3>6천명이 경악한 회전초밥 접시 탑쌓기</h3>
+                            <p>(쯔양) 2019. 5. 24</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="mlist" vid="7iUzgh35rN8">
+                            <img src="http://img.youtube.com/vi/7iUzgh35rN8/default.jpg" class="photo">
+                            <h3>아는 누나가 갑자기 고백을...어떡하죠?</h3>
+                            <p>(깨박이) 2019. 7. 12</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="mlist" vid="TBnBykd1x2g">
+                            <img src="http://img.youtube.com/vi/TBnBykd1x2g/default.jpg" class="photo">
+                            <h3>120kg 최고급참치 한마리 통째로먹방!</h3>
+                            <p>(엠브로) 2019. 4. 27</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="mlist" vid="EcgPpGMAW_s">
+                            <img src="http://img.youtube.com/vi/EcgPpGMAW_s/default.jpg" class="photo">
+                            <h3>풍월량이 술먹고 룰렛하면 생기는 일ㅋㅋ</h3>
+                            <p>(풍월량) 2019. 6. 2</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="mlist" vid="jwnbpB9VlZY">
+                            <img src="http://img.youtube.com/vi/jwnbpB9VlZY/default.jpg" class="photo">
+                            <h3>40cm대왕 킹타이거 새우 9마리 먹방</h3>
+                            <p>(쯔양) 2019. 1. 27</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="collapsible">
+                <h2>시트콤?</h2>
+                <ul data-role="listview">
+                    <li>
+                        <a href="#" class="mlist" vid="SazlwSPv2nM">
+                            <img src="http://img.youtube.com/vi/SazlwSPv2nM/default.jpg" class="photo">
+                            <h3>어버이날, 부모님께 특별한 선물을 해드렸습니다</h3>
+                            <p>(양팡) 2019. 5. 8</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="mlist" vid="voU83cMoj50">
+                            <img src="http://img.youtube.com/vi/voU83cMoj50/default.jpg" class="photo">
+                            <h3>제 동생은 미쳐있습니다</h3>
+                            <p>(양팡) 2019. 2. 16</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="collapsible">
+                <h2>Vlog</h2>
+                <ul data-role="listview">
+                    <li>
+                        <a href="#" class="mlist" vid="Ph85hnPHzgA">
+                            <img src="http://img.youtube.com/vi/Ph85hnPHzgA/default.jpg" class="photo">
+                            <h3>J.Fla Vlog ( 9 million subscribers &amp; UK Trip )</h3>
+                            <p>(J.Fla) 2018. 9. 7</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="mlist" vid="DkKyxBDDeyk">
+                            <img src="http://img.youtube.com/vi/DkKyxBDDeyk/default.jpg" class="photo">
+                            <h3>EP.01 강릉여행편</h3>
+                            <p>(보라미유) 2019. 7. 12</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
 </html>

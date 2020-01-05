@@ -4,8 +4,8 @@
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="rudalson@gmail.com" href="http://cordova.io">
+        Rudalson
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
@@ -16,6 +16,37 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <!-- 여기 아래 부터 복사 (접근허용 웹사이트 등록)-->
+    <allow-navigation href = "http://*.youtube.com/*"/>
+    <allow-navigation href = "https://*.youtube.com/*"/>
+    <allow-navigation href = "http://*.afreecatv.com/*"/>
+    <allow-navigation href = "https://*.afreecatv.com/*"/>
+    <allow-navigation href = "http://*.twitch.tv/*"/>
+    <allow-navigation href = "https://*.twitch.tv/*"/>
+    <allow-navigation href = "http://*.facebook.com/*"/>
+    <allow-navigation href = "https://*.facebook.com/*"/>
+    <allow-navigation href = "http://*.instagram.com/*"/>
+    <allow-navigation href = "https://*.instagram.com/*"/>
+    <allow-navigation href = "http://*.twitter.com/*"/>
+    <allow-navigation href = "https://*.twitter.com/*"/>
+    <allow-navigation href = "http://*.tiktok.com/*"/>
+    <allow-navigation href = "https://*.tiktok.com/*"/>
+    <allow-navigation href = "http://toon.at/*"/>
+    <allow-navigation href = "https://toon.at/*"/>
+    <allow-navigation href = "http://twip.kr/*"/>
+    <allow-navigation href = "https://twip.kr/*"/>
+    <allow-navigation href = "http://*.daum.net/*"/>
+    <allow-navigation href = "https://*.daum.net/*"/>
+    <allow-navigation href = "http://*.naver.com/*"/>
+    <allow-navigation href = "https://*.naver.com/*"/>
+    <allow-navigation href = "https://*.*.naver.com/*"/>
+    <allow-navigation href = "http://*.tistory.com/*"/>
+    <allow-navigation href = "https://*.tistory.com/*"/>
+    <allow-navigation href = "http://*.blog.me/*"/>
+    <allow-navigation href = "https://*.blog.me/*"/>
+    <allow-navigation href = "http://*.kakao.com/*"/>
+    <allow-navigation href = "https://*.kakao.com/*"/>
+    <!-- 여기까지 복사 -->
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
