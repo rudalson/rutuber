@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run android": "cordova run android"
+    "run android": "cordova run android",
+    "run browser": "cordova run browser"
   },
   "keywords": [
     "ecosystem:cordova"
@@ -14,12 +15,16 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
+    "cordova-admob-sdk": "0.24.1",
     "cordova-android": "^8.1.0",
+    "cordova-browser": "^6.0.0",
+    "cordova-plugin-admob-free": "0.27.0",
     "cordova-plugin-file": "^6.0.2",
     "cordova-plugin-in-app-youtube": "git+https://github.com/davidefavia/cordova-plugin-in-app-youtube.git",
     "cordova-plugin-inappbrowser": "^3.1.0",
     "cordova-plugin-media": "^5.0.3",
-    "cordova-plugin-vibration": "^3.1.1"
+    "cordova-plugin-vibration": "^3.1.1",
+    "cordova-promise-polyfill": "0.0.2"
   },
   "cordova": {
     "plugins": {
@@ -27,10 +32,14 @@
       "cordova-plugin-in-app-youtube": {},
       "cordova-plugin-whitelist": {},
       "cordova-plugin-vibration": {},
-      "cordova-plugin-media": {}
+      "cordova-plugin-media": {},
+      "cordova-plugin-admob-free": {
+        "ADMOB_APP_ID": "ca-app-pub-5286698881797713~3727754533"
+      }
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   },
   "devDependencies": {

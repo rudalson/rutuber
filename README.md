@@ -21,3 +21,8 @@ $ cordova platform add android
 $ cordova plugin add cordova-plugin-vibration
 $ cordova plugin add cordova-plugin-media
 ```
+
+## admob 용 플러그인 추가
+```shell script
+$ cordova plugin add cordova-plugin-admob-free --save --variable ADMOB_APP_ID="앱 ID"
+```
