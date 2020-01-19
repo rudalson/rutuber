@@ -77,20 +77,20 @@ var app = {
     receivedEvent: function(id) {
 
 		// 각 버튼 별 클릭시 이동할 곳 설정
-		$("#youtube").click("#page2", this.openPage);
-		$("#afreecatv").click("http://play.afreecatv.com/dlghfjs/216307994", this.showUrl.bind(this));
-		$("#twitch").click("https://www.twitch.tv/hanryang1125", this.showUrl.bind(this));
-		$("#facebook").click("https://www.facebook.com/%EB%8D%95%EC%9E%90%EC%A0%84%EC%84%B1%EC%8B%9C%EB%8C%80-728776874206366/", this.showUrl.bind(this));
-		$("#instagram").click("https://www.instagram.com/tzuyang70/", this.showUrl.bind(this));
-		$("#twitter").click("https://twitter.com/lily199iu", this.showUrl.bind(this));
-		$("#tiktok").click("http://vt.tiktok.com/JXoXVs/", this.showUrl.bind(this));
-		$("#toonation").click("https://toon.at/donate/chobo904", this.showUrl.bind(this));
-		$("#twip").click("https://twip.kr/아이디코드", this.showUrl.bind(this));
-		$("#daumcafe").click("http://cafe.daum.net/flower7695", this.showUrl.bind(this));
-		$("#navercafe").click("https://cafe.naver.com/lilka", this.showUrl.bind(this));
-		$("#tistory").click("https://studymake.tistory.com/113", this.showUrl.bind(this));
-		$("#naverblog").click("https://flex77.blog.me/", this.showUrl.bind(this));
-		$("#kakaotalk").click("http://pf.kakao.com/아이디코드", this.showUrl.bind(this));	// 오픈채팅방
+		$("#youtube").click({url:"#page2", me:this}, this.openPage);
+		$("#afreecatv").click({url:"http://play.afreecatv.com/dlghfjs/216307994", me:this}, this.showUrl);
+		$("#twitch").click({url:"https://www.twitch.tv/hanryang1125", me:this}, this.showUrl);
+		$("#facebook").click({url:"https://www.facebook.com/2ahrin", me:this}, this.showUrl);
+		$("#instagram").click({url:"https://www.instagram.com/tzuyang70/", me:this}, this.showUrl);
+		$("#twitter").click({url:"https://twitter.com/rudalson", me:this}, this.showUrl);
+		$("#tiktok").click({url:"http://vt.tiktok.com/JXoXVs/", me:this}, this.showUrl);
+		$("#toonation").click({url:"https://rudalson.com/", me:this}, this.showUrl);
+		$("#twip").click({url:"https://twip.kr/아이디코드", me:this}, this.showUrl);
+		$("#daumcafe").click({url:"http://cafe.daum.net/flower7695", me:this}, this.showUrl);
+		$("#navercafe").click({url:"https://cafe.naver.com/lilka", me:this}, this.showUrl);
+		$("#tistory").click({url:"https://rudalson.tistory.com", me:this}, this.showUrl);
+		$("#naverblog").click({url:"https://flex77.blog.me/", me:this}, this.showUrl);
+		$("#kakaotalk").click({url:"http://pf.kakao.com/아이디코드", me:this}, this.showUrl);	// 오픈채팅방
 
 		// 유튜브 리스트 클릭시 호출할 함수 설정
 		$(".mlist").click(this.playYT);
@@ -123,18 +123,25 @@ var app = {
     },
 
 	openPage: function(e) {	// 받아온 페이지id로 이동하는 함수
-		var pg = e.data;
+		this.src = "img/crystal-ball-click.png";
+		e.data.me.btnClick();	// 버튼 클릭 효과 호출
+		var pg = e.data.url;
 		document.location = pg;
+		setTimeout(function(){
+			this.src = "img/crystal-ball.png";
+		}.bind(this),1000);
 	},
 
 	showUrl: function(e) {	// 받아온 URL주소 열어주는 함수
-		var url = e.data;
+		this.src = "img/crystal-ball-click.png";
+		e.data.me.btnClick();	// 버튼 클릭 효과 호출
+		var url = e.data.url;
 		if(url == ""){
 			alert("연결된 주소가 없습니다.");
 			return;
 		}
 		adcnt += 1;	// 전면광고 여부 카운트
-		this.loadShow();	//로딩 이미지 호출
+		e.data.me.loadShow();	//로딩 이미지 호출
 		var target = "_blank";
 		var options = "location=yes";
 		inAppBrowserRef = cordova.InAppBrowser.open(url, target, options);
@@ -143,6 +150,9 @@ var app = {
 		inAppBrowserRef.addEventListener('loaderror', loadErrorCallBack);
 		inAppBrowserRef.addEventListener('beforeload', beforeloadCallBack);
 		inAppBrowserRef.addEventListener('message', messageCallBack);*/
+		setTimeout(function(){
+			this.src = "img/crystal-ball.png";
+		}.bind(this),1000);
 	},
 
 	loadShow: function(){	// 로딩 이미지 보여주는 함수
@@ -196,6 +206,12 @@ var app = {
 			admob.interstitial.prepare();
 			adcnt = 0;
 		}
+	},
+
+	btnClick: function(){	// 버튼 클릭 효과
+		var my_media = new Media("/android_asset/www/sound/s1.wav");
+		my_media.play();
+		navigator.vibrate(50);	// 0.05초간 진동
 	},
 };
 
